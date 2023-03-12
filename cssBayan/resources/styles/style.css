@@ -16,6 +16,10 @@ header, main {
     width: 100%;
     max-width: 820px;
 }
+header {
+    padding: 20px;
+    border-bottom: 1px solid gray;
+}
 .mem {
     padding: 10px;
     border-bottom: 1px solid gray;
@@ -36,21 +40,26 @@ header, main {
 :checked ~ .image_wrapper  img{
     height: 500px;
 }
-.mem-text {
-    display:inline-block;
-    width: 100%;
+.mem_text {
+    display: block;
+    width: calc(100% - 30px);
 }
 .mem_text::after { 
     content: '+';
-    display: inline-block;
+    font-size: 20px;
+    line-height: 10px;
+    font-weight: bold;
+    display: block;
+    position: relative;
+    left: 20px;
+    float: right;
     transition: .5s;
+    transform-origin: 5px 5px;
 }
-:hover + .mem_text::after,
+.mem:hover .mem_text::after,
 :checked + .mem_text::after { 
-    content: '+';
-    display: inline-block;
     transform: rotate(45deg);
-    transition: .5s;
+    
 }
 ul, li {
     list-style: none;
